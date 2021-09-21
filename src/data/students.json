@@ -1,0 +1,15 @@
+[
+  { "name": "Aron", "age": 24, "id": "3kgeacktjxtomx", "createdAt": "2021-09-14T10:33:59.288Z" },
+  { "name": "Aron", "age": 40, "id": "3kgeacktjxvyad", "createdAt": "2021-09-14T10:35:45.109Z" },
+  { "name": "Aron", "id": "3kgeacktjxvywl", "createdAt": "2021-09-14T10:35:45.909Z" },
+  { "name": "Aron", "id": "3kgeacktjxvzd1", "createdAt": "2021-09-14T10:35:46.501Z" },
+  { "name": "Aron", "id": "3kgeacktjxvzux", "createdAt": "2021-09-14T10:35:47.145Z" },
+  {
+    "firstName": "LOTR - Fellowship of the ring",
+    "lastName": "Miceli",
+    "email": "stefano@strive.com",
+    "id": "3kggv8ktldgvyl",
+    "createdAt": "2021-09-15T10:39:42.284Z",
+    "img": "http://localhost:3001/img/students/giphy.gif"
+  }
+]
