@@ -11,7 +11,9 @@ import { badRequestErrorHandler, notFoundErrorHandler, forbiddenErrorHandler, ge
 
 const server = express()
 
-const port = 3001
+const port = process.env.PORT
+
+console.log("ENV VAR", process.env)
 
 const loggerMiddleware = (req, res, next) => {
   console.log(`Request method ${req.method} -- Request URL ${req.url} -- ${new Date()}`)
@@ -22,6 +24,26 @@ const loggerMiddleware = (req, res, next) => {
   //   next() // MANDATORY!!!! I need to execute this function to give the control to what is coming next (either another middleware or the request handler)
   // }
   next()
+}
+
+//**************************CORS************************ */
+
+// CORS: CROSS-ORIGIN-RESOURCE SHARING
+
+// htt
+const whitelist = [process.env.FE_DEV_URL, process.env.FE_PROD_URL] //we
+//are allowing local FE AND the deployed FE to access to our API
+
+const corsOptions = {
+  origin: function (origin, next) {
+    console.log(origin)
+    if (!origin || whitelist.indexOf(origin) === -1) {//if received origin is in the whitelist
+      //we are going to allow that request
+      next(null, true)
+    } else {// if it is not we are going to reject that request
+      next(new Error(`Origin ${origin} not allowed`))
+    }
+  }
 }
 
 const publicFolderPath = join(process.cwd(), "public")
